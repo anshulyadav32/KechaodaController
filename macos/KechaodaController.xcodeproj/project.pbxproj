@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052FAC6773D4168113D611E1 /* libPods-KechaodaController-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F048205E65B0A4D394E20E /* libPods-KechaodaController-macOS.a */; };
-		162EAC9769016740B5AB3811 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D5AB9087AC0084576CCE3416 /* PrivacyInfo.xcprivacy */; };
+		A1B2C3D40000000000000001 /* BluetoothManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000003 /* BluetoothManager.mm */; };
+		A1B2C3D40000000000000005 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000006 /* CoreBluetooth.framework */; };
 		5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5142014C2437B4B30078DB4F /* AppDelegate.mm */; };
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
 		514201552437B4B40078DB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514201532437B4B40078DB4F /* Main.storyboard */; };
 		514201582437B4B40078DB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 514201572437B4B40078DB4F /* main.m */; };
-		A1B2C3D40000000000000001 /* BluetoothManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000003 /* BluetoothManager.mm */; };
-		A1B2C3D40000000000000005 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000006 /* CoreBluetooth.framework */; };
-		AC77BE9D4CBFAB1FF086EBE8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D5AB9087AC0084576CCE3416 /* PrivacyInfo.xcprivacy */; };
+		734F6E3F4722010C90FABC8F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F1203CBD72304F6A18D409D9 /* PrivacyInfo.xcprivacy */; };
+		7B5EE8F00D814AE0125DFD5D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F1203CBD72304F6A18D409D9 /* PrivacyInfo.xcprivacy */; };
+		D8AC82462B7830E55E79FCD4 /* libPods-KechaodaController-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD69BDCAB68F69D0CD50CD9 /* libPods-KechaodaController-macOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A1B2C3D40000000000000002 /* BluetoothManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
+		A1B2C3D40000000000000003 /* BluetoothManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BluetoothManager.mm; sourceTree = "<group>"; };
+		A1B2C3D40000000000000006 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		13B07F961A680F5B00A75B9A /* KechaodaController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KechaodaController.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		31F67D9ACF3BF35ABEA347F2 /* Pods-KechaodaController-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KechaodaController-macOS.debug.xcconfig"; path = "Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		33F048205E65B0A4D394E20E /* libPods-KechaodaController-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KechaodaController-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DD69BDCAB68F69D0CD50CD9 /* libPods-KechaodaController-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KechaodaController-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		514201492437B4B30078DB4F /* KechaodaController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KechaodaController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5142014B2437B4B30078DB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5142014C2437B4B30078DB4F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -30,12 +32,10 @@
 		514201562437B4B40078DB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		514201572437B4B40078DB4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		514201592437B4B40078DB4F /* KechaodaController.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KechaodaController.entitlements; sourceTree = "<group>"; };
-		6ECF72B49AC897971DA7D31A /* Pods-KechaodaController-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KechaodaController-macOS.release.xcconfig"; path = "Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS.release.xcconfig"; sourceTree = "<group>"; };
-		A1B2C3D40000000000000002 /* BluetoothManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
-		A1B2C3D40000000000000003 /* BluetoothManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BluetoothManager.mm; sourceTree = "<group>"; };
-		A1B2C3D40000000000000006 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		D5AB9087AC0084576CCE3416 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		85C425B5D61B5E9FCBB9DC0D /* Pods-KechaodaController-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KechaodaController-macOS.debug.xcconfig"; path = "Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D8FFF492E9F073C9F1536D3B /* Pods-KechaodaController-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KechaodaController-macOS.release.xcconfig"; path = "Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F1203CBD72304F6A18D409D9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B2C3D40000000000000005 /* CoreBluetooth.framework in Frameworks */,
-				052FAC6773D4168113D611E1 /* libPods-KechaodaController-macOS.a in Frameworks */,
+				D8AC82462B7830E55E79FCD4 /* libPods-KechaodaController-macOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			children = (
 				A1B2C3D40000000000000006 /* CoreBluetooth.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				33F048205E65B0A4D394E20E /* libPods-KechaodaController-macOS.a */,
+				4DD69BDCAB68F69D0CD50CD9 /* libPods-KechaodaController-macOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -83,16 +83,6 @@
 			path = "KechaodaController-macOS";
 			sourceTree = "<group>";
 		};
-		6C54487DB2189ED55D8AE700 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				31F67D9ACF3BF35ABEA347F2 /* Pods-KechaodaController-macOS.debug.xcconfig */,
-				6ECF72B49AC897971DA7D31A /* Pods-KechaodaController-macOS.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,8 +97,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				D5AB9087AC0084576CCE3416 /* PrivacyInfo.xcprivacy */,
-				6C54487DB2189ED55D8AE700 /* Pods */,
+				F1203CBD72304F6A18D409D9 /* PrivacyInfo.xcprivacy */,
+				C304BA781C7B325DB265EDEC /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -122,6 +112,16 @@
 				514201492437B4B30078DB4F /* KechaodaController.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C304BA781C7B325DB265EDEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85C425B5D61B5E9FCBB9DC0D /* Pods-KechaodaController-macOS.debug.xcconfig */,
+				D8FFF492E9F073C9F1536D3B /* Pods-KechaodaController-macOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		A1B2C3D40000000000000004 /* Bluetooth */ = {
@@ -163,8 +163,8 @@
 				514201462437B4B30078DB4F /* Frameworks */,
 				514201472437B4B30078DB4F /* Resources */,
 				381D8A6E24576A4E00465D17 /* Bundle React Native code and images */,
-				40CF401E1C17DD75FCD25695 /* [CP] Embed Pods Frameworks */,
-				4D0736DDCF51E8183200A8C3 /* [CP] Copy Pods Resources */,
+				FDC5E9337226556208BFEB38 /* [CP] Embed Pods Frameworks */,
+				8108A56CBED6AB7B42D26DD9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,7 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC77BE9D4CBFAB1FF086EBE8 /* PrivacyInfo.xcprivacy in Resources */,
+				734F6E3F4722010C90FABC8F /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +226,7 @@
 			files = (
 				514201522437B4B40078DB4F /* Assets.xcassets in Resources */,
 				514201552437B4B40078DB4F /* Main.storyboard in Resources */,
-				162EAC9769016740B5AB3811 /* PrivacyInfo.xcprivacy in Resources */,
+				7B5EE8F00D814AE0125DFD5D /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,25 +287,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native-macos/scripts/react-native-xcode.sh\n";
 		};
-		40CF401E1C17DD75FCD25695 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS-frameworks.sh",
-				"${PODS_ROOT}/hermes-engine/destroot/Library/Frameworks/macosx/hermes.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D0736DDCF51E8183200A8C3 /* [CP] Copy Pods Resources */ = {
+		8108A56CBED6AB7B42D26DD9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -329,6 +311,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDC5E9337226556208BFEB38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS-frameworks.sh",
+				"${PODS_ROOT}/hermes-engine/destroot/Library/Frameworks/macosx/hermes.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KechaodaController-macOS/Pods-KechaodaController-macOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -409,13 +409,13 @@
 		};
 		5142015B2437B4B40078DB4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31F67D9ACF3BF35ABEA347F2 /* Pods-KechaodaController-macOS.debug.xcconfig */;
+			baseConfigurationReference = 85C425B5D61B5E9FCBB9DC0D /* Pods-KechaodaController-macOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				INFOPLIST_FILE = "KechaodaController-macos/Info.plist";
+				INFOPLIST_FILE = "KechaodaController-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				OTHER_LDFLAGS = (
@@ -425,6 +425,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = KechaodaController;
+				REACT_NATIVE_PATH = "/Users/mac/dev/KechaodaController/node_modules/react-native";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -433,12 +434,12 @@
 		};
 		5142015C2437B4B40078DB4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6ECF72B49AC897971DA7D31A /* Pods-KechaodaController-macOS.release.xcconfig */;
+			baseConfigurationReference = D8FFF492E9F073C9F1536D3B /* Pods-KechaodaController-macOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = "KechaodaController-macos/Info.plist";
+				INFOPLIST_FILE = "KechaodaController-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				OTHER_LDFLAGS = (
@@ -448,6 +449,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = KechaodaController;
+				REACT_NATIVE_PATH = "/Users/mac/dev/KechaodaController/node_modules/react-native";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
