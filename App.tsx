@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {NativeEventEmitter, NativeModules, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 
 type Log = {type: 'TX' | 'RX' | 'SYSTEM'; text: string; time: string};
@@ -16,7 +16,41 @@ export default function App() {
   const [logs, setLogs] = useState<Log[]>([]);
   const [device, setDevice] = useState<Device>({model: 'Unknown', firmware: 'Unknown', signal: 'Unknown', operator: 'Unknown', charset: 'Unknown'});
 
-  const addLog = (type: Log['type'], text: string) => setLogs(previous => [...previous.slice(-500), {type, text, time: new Date().toLocaleTimeString()}]);
+  const addLog = useCallback((type: Log['type'], text: string) => setLogs(previous => [...previous.slice(-500), {type, text, time: new Date().toLocaleTimeString()}]), []);
+
+  const parseResponse = useCallback((data: string) => {
+    const update = (key: keyof Device, pattern: RegExp) => { const match = data.match(pattern); if (match) setDevice(previous => ({...previous, [key]: match[1].replace(/\r/g, '').trim()})); };
+    update('model', /\+CGMM:\s*(.+)/);
+    update('firmware', /\+CGMR:\s*(.+)/);
+    update('signal', /\+CSQ:\s*([0-9]+\s*,\s*[0-9]+)/);
+    update('operator', /\+COPS:\s*[^,]+,[^,]+,"([^"]+)"/);
+    update('charset', /\+CSCS:\s*"([^"]+)"/);
+  }, []);
+
+  const sendCommand = useCallback(async (value = command) => {
+    const trimmed = value.trim();
+    if (!usb || !trimmed) return;
+    addLog('TX', trimmed);
+    try { await usb.send(trimmed); } catch (error) { addLog('SYSTEM', String(error)); }
+  }, [addLog, command]);
+
+  const scanPorts = useCallback(async () => {
+    if (!usb) return;
+    try { const result = await usb.listPorts(); setPorts(result); if (result.length > 0) setPort(current => result.includes(current) ? current : result[0]); }
+    catch (error) { addLog('SYSTEM', String(error)); }
+  }, [addLog]);
+
+  async function connect() {
+    if (!usb) return;
+    addLog('SYSTEM', `Connecting to ${port}`);
+    try { await usb.connect(port); } catch (error) { addLog('SYSTEM', String(error)); }
+  }
+
+  function disconnect() { usb?.disconnect(); }
+
+  const initializeDevice = useCallback(() => {
+    ['AT', 'AT+CGMM', 'AT+CGMR', 'AT+CSQ', 'AT+COPS?', 'AT+CSCS?', 'AT+CLCC', 'AT+CMEE?', 'AT+CCWA?', 'AT+CLIP?'].forEach((value, index) => setTimeout(() => void sendCommand(value), 100 + index * 800));
+  }, [sendCommand]);
 
   useEffect(() => {
     if (!usb || !usbEvents) {
@@ -31,41 +65,7 @@ export default function App() {
       usbEvents.addListener('KechaodaError', event => addLog('SYSTEM', event?.message || 'USB error')),
     ];
     return () => subscriptions.forEach(subscription => subscription.remove());
-  }, []);
-
-  async function scanPorts() {
-    if (!usb) return;
-    try { const result = await usb.listPorts(); setPorts(result); if (result.length > 0 && !result.includes(port)) setPort(result[0]); }
-    catch (error) { addLog('SYSTEM', String(error)); }
-  }
-
-  async function connect() {
-    if (!usb) return;
-    addLog('SYSTEM', `Connecting to ${port}`);
-    try { await usb.connect(port); } catch (error) { addLog('SYSTEM', String(error)); }
-  }
-
-  function disconnect() { usb?.disconnect(); }
-
-  async function sendCommand(value = command) {
-    const trimmed = value.trim();
-    if (!usb || !trimmed) return;
-    addLog('TX', trimmed);
-    try { await usb.send(trimmed); } catch (error) { addLog('SYSTEM', String(error)); }
-  }
-
-  function initializeDevice() {
-    ['AT', 'AT+CGMM', 'AT+CGMR', 'AT+CSQ', 'AT+COPS?', 'AT+CSCS?', 'AT+CLCC', 'AT+CMEE?', 'AT+CCWA?', 'AT+CLIP?'].forEach((value, index) => setTimeout(() => void sendCommand(value), 100 + index * 800));
-  }
-
-  function parseResponse(data: string) {
-    const update = (key: keyof Device, pattern: RegExp) => { const match = data.match(pattern); if (match) setDevice(previous => ({...previous, [key]: match[1].replace(/\r/g, '').trim()})); };
-    update('model', /\+CGMM:\s*(.+)/);
-    update('firmware', /\+CGMR:\s*(.+)/);
-    update('signal', /\+CSQ:\s*([0-9]+\s*,\s*[0-9]+)/);
-    update('operator', /\+COPS:\s*[^,]+,[^,]+,"([^"]+)"/);
-    update('charset', /\+CSCS:\s*"([^"]+)"/);
-  }
+  }, [addLog, initializeDevice, parseResponse, scanPorts]);
 
   return <SafeAreaView style={styles.container}>
     <View style={styles.header}><Text style={styles.title}>KECHAODA Controller</Text><View style={[styles.status, {backgroundColor: connected ? '#198754' : '#666'}]}><Text style={styles.statusText}>{connected ? 'CONNECTED' : 'DISCONNECTED'}</Text></View></View>
