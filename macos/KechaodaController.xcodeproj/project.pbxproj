@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A1B2C3D40000000000000001 /* BluetoothManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000003 /* BluetoothManager.mm */; };
+		A1B2C3D40000000000000007 /* KechaodaUSBModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000009 /* KechaodaUSBModule.mm */; };
 		A1B2C3D40000000000000005 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000006 /* CoreBluetooth.framework */; };
 		5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5142014C2437B4B30078DB4F /* AppDelegate.mm */; };
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		A1B2C3D40000000000000002 /* BluetoothManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
 		A1B2C3D40000000000000003 /* BluetoothManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BluetoothManager.mm; sourceTree = "<group>"; };
+		A1B2C3D40000000000000008 /* KechaodaUSBModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KechaodaUSBModule.h; sourceTree = "<group>"; };
+		A1B2C3D40000000000000009 /* KechaodaUSBModule.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = KechaodaUSBModule.mm; sourceTree = "<group>"; };
 		A1B2C3D40000000000000006 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		13B07F961A680F5B00A75B9A /* KechaodaController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KechaodaController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD69BDCAB68F69D0CD50CD9 /* libPods-KechaodaController-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KechaodaController-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +77,8 @@
 				A1B2C3D40000000000000004 /* Bluetooth */,
 				5142014B2437B4B30078DB4F /* AppDelegate.h */,
 				5142014C2437B4B30078DB4F /* AppDelegate.mm */,
+				A1B2C3D40000000000000008 /* KechaodaUSBModule.h */,
+				A1B2C3D40000000000000009 /* KechaodaUSBModule.mm */,
 				514201512437B4B40078DB4F /* Assets.xcassets */,
 				514201532437B4B40078DB4F /* Main.storyboard */,
 				514201562437B4B40078DB4F /* Info.plist */,
@@ -348,6 +353,7 @@
 				514201582437B4B40078DB4F /* main.m in Sources */,
 				5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */,
 				A1B2C3D40000000000000001 /* BluetoothManager.mm in Sources */,
+				A1B2C3D40000000000000007 /* KechaodaUSBModule.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +424,7 @@
 				INFOPLIST_FILE = "KechaodaController-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				RCT_METRO_PORT = 8081;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

@@ -41,6 +41,18 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+# Flutter
+#
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+
+# Local Python environments
+#
+**/.venv/
+**/venv/
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
